@@ -1,7 +1,7 @@
 === WDS Page Template Admin Column ===
 Contributors:      WebDevStudios
 Donate link:       http://webdevstudios.com
-Tags:
+Tags:              pages, page templates, admin columns
 Requires at least: 3.6.0
 Tested up to:      3.6.0
 Stable tag:        0.1.0
