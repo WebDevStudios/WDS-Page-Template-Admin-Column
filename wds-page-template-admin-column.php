@@ -177,11 +177,11 @@ class WDS_Page_Template_Admin_Column {
 			return;
 		}
 
-		$template  = self::get_template_name( $post_id );
-		$template  = $template ? $template : '&mdash;';
-
+		$template = self::get_template( $post_id );
+		$name     = $template['name'] ? $template['name'] : '&mdash;';
+		$html     = sprintf( '<strong title="%s">%s</strong>', esc_attr( $template['slug'] ), $name );
 		// in case you want to modify the markup
-		echo apply_filters( 'wds_page_template_admin_column_markup', "<strong>$template</strong>", $template );
+		echo apply_filters( 'wds_page_template_admin_column_markup', $html, $template );
 	}
 
 	/**
@@ -193,13 +193,15 @@ class WDS_Page_Template_Admin_Column {
 	 *
 	 * @return string          Template name or slug, or empty
 	 */
-	public static function get_template_name( $post_id = 0 ) {
+	public static function get_template( $post_id = 0 ) {
 		$post_id = $post_id ? $post_id : get_the_ID();
 
-		$template  = get_page_template_slug( $post_id );
-		$templates = get_page_templates( $post_id );
-		$templates = is_array( $templates ) ? array_flip( $templates ) : array();
-		return array_key_exists( $template, $templates ) ? $templates[ $template ] : $template;
+		$template      = get_page_template_slug( $post_id );
+		$templates     = get_page_templates( $post_id );
+		$templates     = is_array( $templates ) ? array_flip( $templates ) : array();
+		$template_name = array_key_exists( $template, $templates ) ? $templates[ $template ] : '';
+
+		return array( 'slug' => $template, 'name' => $template_name );
 	}
 
 	/**
