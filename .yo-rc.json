@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "WDS Page Template Admin Column",
+    "homepage": "http://webdevstudios.com",
+    "description": "Adds admin column to pages listings to display the pages Template name",
+    "version": "0.1.0",
+    "author": "WebDevStudios",
+    "authoremail": "contact@webdevstudios.com",
+    "authorurl": "http://webdevstudios.com",
+    "license": "GPLv2",
+    "slug": "wds-page-template-admin-column",
+    "classname": "WDS_Page_Template_Admin_Column",
+    "classprefix": "WDSPTAC_",
+    "prefix": "wds_page_template_admin_column",
+    "year": 2015
+  }
+}
