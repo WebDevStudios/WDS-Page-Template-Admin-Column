@@ -10,7 +10,7 @@
 
 ## Description ##
 
-Adds admin column to pages listings to display the pages Template name
+Adds admin column to pages listings to display the pages Template name.
 
 ## Installation ##
 
